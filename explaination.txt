@@ -1,0 +1,55 @@
+
+我們要用到的套件是 socket io
+安裝 nodejs 
+指令 npm install xxxx 最後面都會加上 --save
+他會產生一個檔案叫做 package.json
+
+這個檔案可以幫助我們在別台電腦做設定
+只要別台電腦安裝好nodejs
+之後我們只要打 npm init
+他就會幫我們安裝好我們需要的環境了
+之後就可以直接執行囉
+
+接著 我們要先從cmd 執行server.js
+指令是 node server.js
+看到跳出字串就是成功了
+然後才可以開啟網頁看結果喔
+要不然網頁納編會有很多錯誤
+
+我先在這邊把等等要做的事情列出來
+1. 讓 customer 連線到 server 然後會印使用者連線上去的訊息
+2. 讓 store 也連線到 server 然後也印出使用連線的訊息
+3. customer 將訊息送到 server 之後 server那端可以看到customer的訊息
+4. server 將訊息轉送到 store 那邊 store可以在網頁上印出server轉送的訊息~
+
+我先在這邊說明指令
+送訊息是使用 emit 函式
+範例是
+var data = {"msg": "我們要傳送的內容!!"}
+socket.emit("這邊輸入事件的名子", data)
+data 是我們要傳輸的資料他是一個物件的形式
+
+基本上這樣就完成了
+
+好 接下來我們要轉送訊息到 store 端
+我會用到一個指令叫做 broadcast
+廣播
+這種廣播 送訊息給發訊息的人
+像是剛剛是customer發訊息給server
+server 呼叫 broadcast 就不會送給 customer 只會送給 store
+
+如果有多個customer跟store的話 broadcast 的行為會錯喔
+因為 broadcast 是送訊息給 發訊者以外的人
+所以有多個customer的話 就有可能 customer發訊息給customer喔XD
+
+emit是指定送給server所以沒問題
+那我是多個customer到多個店呢？
+
+這有幾種解決方法 第一種是customer跟store所用的事件名稱要錯開
+事件名稱是指這個
+剛剛我框起來的東西
+只要錯開就沒問題了
+因為就算customer送給customer也會因為她沒有註冊這個事件而不會有動作
+這種解法是最簡單
+
+
