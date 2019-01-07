@@ -249,4 +249,25 @@ ul {
   border:'1';
 
 }
+#queue nav             { font-weight: bold;
+    color: white;
+    border:none;
+    text-align: center;
+    font-size:30px;
+    color:red;
+    width:30%;
+    height:relative;
+    background-color:transparent;
+    float:left;
+     }
+#queue nav ul          { display: none;
+         list-style: none;
+          margin: 0;
+        padding: 0; }
+#queue nav:hover ul    { display: block; }
+#queue nav ul li       { border-top: 2px solid #FFD4D4; ;
+    background-color:lightyellow;
+    width:relative;
+    color: black; }
+#queue nav ul li:hover { background-color: lightcoral; }
 

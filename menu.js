@@ -4,8 +4,16 @@ function createMenu()
 {
     var menuDiv = document.getElementById("menuDiv");
     //menuDiv.innerHTML = '<img src="images/WeCanMenu.jpg" alt="WeCan威肯創意廚房Menu">';
-   
+
 }
+
+socket.on("queueMessage", function (data) {
+    var node = document.createElement("LI");
+    var textnode = document.createTextNode(data.message);
+    node.appendChild(textnode);
+    document.getElementById("ready").appendChild(node);
+})
+
 
 function changeMenu( menu )
 {
@@ -448,7 +456,8 @@ function order( menu, food )
     var text;
     if(txt == true)
     {
-        //var node = document.createElement("TD");
+        var node = document.createElement("LI");
+        var textnode;
         //console.log("order");
         if( menu == 1 )
         {
@@ -458,37 +467,41 @@ function order( menu, food )
                 case 1:
                     
                     text = "豪邁雙牛大威堡, 159";
-                   // var textnode = document.createTextNode(text);
-                   // node.appendChild(textnode);
-                    //document.getElementById("1").appendChild(node);
                     socket.emit("customerMessage", { message : text });
                     break;
                 case 2:
                     text = "豪邁雙語大威堡, 149";
+                    
                     socket.emit("customerMessage", { message : text });
                     break;
                 case 3:
                     text = "招牌培根小威堡, 109";
+                    
                     socket.emit("customerMessage", { message : text });
                     break;
                 case 4:
                     text = "千島經辣雞腿堡, 99";
+                    
                     socket.emit("customerMessage", { message : text });
                     break;
                 case 5:
                     text = "胡麻起司豬排堡, 89";
+                    
                     socket.emit("customerMessage", { message : text });
                     break;
                 case 6:
                     text = "后切豬肉起司堡, 89";
+                    
                     socket.emit("customerMessage", { message : text });
                     break;
                 case 7:
                     text = "酸甜塔塔魚排堡, 89";
+                    
                     socket.emit("customerMessage", { message : text });
                     break;
                 case 8:
                     text = "蜂蜜芥末魚排堡, 79";
+                    
                     socket.emit("customerMessage", { message : text });
                     break;
                 case 9:
@@ -629,6 +642,9 @@ function order( menu, food )
                     break;
 
             }
+                    textnode = document.createTextNode(text);
+                    node.appendChild(textnode);
+                    document.getElementById("1").appendChild(node);
         }
         if( menu == 2)
         {
@@ -695,6 +711,9 @@ function order( menu, food )
                     socket.emit("customerMessage", { message : text });
                     break;
             }
+            textnode = document.createTextNode(text);
+                    node.appendChild(textnode);
+                    document.getElementById("1").appendChild(node);
         }
         if( menu == 3 )
         {
@@ -768,7 +787,9 @@ function order( menu, food )
                     text = "蔥油雞腿, 80";
                     socket.emit("customerMessage", { message : text });
                     break;
-            }
+            }textnode = document.createTextNode(text);
+            node.appendChild(textnode);
+            document.getElementById("1").appendChild(node);
         }
         if( menu == 4 )
         {
@@ -854,7 +875,9 @@ function order( menu, food )
                     text = "春川辣炒雞 , 90";
                     socket.emit("customerMessage", { message : text });
                     break;
-            }
+            }textnode = document.createTextNode(text);
+            node.appendChild(textnode);
+            document.getElementById("1").appendChild(node);
         }
         if( menu == 5 )
         {
@@ -1065,7 +1088,9 @@ function order( menu, food )
                     socket.emit("customerMessage", { message : text });
                     break;
                 
-            }
+            }textnode = document.createTextNode(text);
+            node.appendChild(textnode);
+            document.getElementById("1").appendChild(node);
         }
         if( menu == 6 )
         {
@@ -1227,7 +1252,9 @@ function order( menu, food )
                     text = "燒鴨前胸（1/4）, 250";
                     socket.emit("customerMessage", { message : text });
                     break;
-            }
+            }textnode = document.createTextNode(text);
+            node.appendChild(textnode);
+            document.getElementById("1").appendChild(node);
         }
         if( menu == 7 )
         {
@@ -1293,7 +1320,9 @@ function order( menu, food )
                     text = "牛丼, 75";
                     socket.emit("customerMessage", { message : text });
                     break;
-            }
+            }textnode = document.createTextNode(text);
+            node.appendChild(textnode);
+            document.getElementById("1").appendChild(node);
         }
         if( menu == 8 )
         {
@@ -1359,7 +1388,9 @@ function order( menu, food )
                     text = "纖菜粥, 80";
                     socket.emit("customerMessage", { message : text });
                     break;
-            }
+            }textnode = document.createTextNode(text);
+            node.appendChild(textnode);
+            document.getElementById("1").appendChild(node);
         }
  
         if( menu == 9)
@@ -1434,7 +1465,9 @@ function order( menu, food )
                     text = "麻辣鮮魚面套餐, 90";
                     socket.emit("customerMessage", { message : text });
                     break;
-            }
+            }textnode = document.createTextNode(text);
+            node.appendChild(textnode);
+            document.getElementById("1").appendChild(node);
         }
         if( menu == 10 )
         {
@@ -1565,7 +1598,9 @@ function order( menu, food )
                     socket.emit("customerMessage", { message : text });
                     break;
                 
-            }
+            }textnode = document.createTextNode(text);
+            node.appendChild(textnode);
+            document.getElementById("1").appendChild(node);
         }
         if( menu == 11)
         {
@@ -1639,7 +1674,9 @@ function order( menu, food )
                     text = "仙草凍奶茶, 35";
                     socket.emit("customerMessage", { message : text });
                     break;
-            }
+            }textnode = document.createTextNode(text);
+            node.appendChild(textnode);
+            document.getElementById("1").appendChild(node);
         }
         if( menu == 12)
         {
@@ -1713,7 +1750,9 @@ function order( menu, food )
                     text = "醬燒石鍋拌飯, 95";
                     socket.emit("customerMessage", { message : text });
                     break;
-            }
+            }textnode = document.createTextNode(text);
+            node.appendChild(textnode);
+            document.getElementById("1").appendChild(node);
         }
     }
     
