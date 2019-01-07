@@ -1,4 +1,4 @@
-var socket = io("http://localhost:8008");
+var socket = io("http://140.121.197.192:8008");
 
 function createMenu()
 {

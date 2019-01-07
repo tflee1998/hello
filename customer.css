@@ -258,7 +258,6 @@ ul {
     width:30%;
     height:relative;
     background-color:transparent;
-    float:left;
      }
 #queue nav ul          { display: none;
          list-style: none;
