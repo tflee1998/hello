@@ -8,12 +8,11 @@ function createMenu()
 }
 
 socket.on("queueMessage", function (data) {
-    playclip6();
     var node = document.createElement("LI");
     var textnode = document.createTextNode(data.message);
     node.appendChild(textnode);
     document.getElementById("ready").appendChild(node);
-
+    playclip6();
 })
 
 
